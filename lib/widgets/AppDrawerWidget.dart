@@ -38,7 +38,7 @@ class AppDrawerState extends State<AppDrawer>{
             (child: Text('Home', locale: Locale.fromSubtags(languageCode: 'hi'),),
             color: Colors.blue,
           focusColor: Colors.red,),
-          TextButton(child: Text('Profile'), onPressed: null, ),
+          FlatButton(child: Text('Profile'), onPressed: null, ),
         ],
       ),
     );

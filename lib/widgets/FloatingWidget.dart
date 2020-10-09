@@ -20,7 +20,7 @@ class FloatingState extends State<Floating>{
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: null,
-      child: Icon(Icons.shopping_cart_sharp),
+      child: Icon(Icons.add_shopping_cart),
       backgroundColor: AppColors.floatingActionButtonColor,
 
     );
