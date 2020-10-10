@@ -8,7 +8,7 @@ class CardWidget extends StatelessWidget {
   }
   Widget setDetails(BuildContext context)
   {
-    return Center(
+    return Container(
       child: Card(
         child: new ListTile(
           
@@ -19,7 +19,10 @@ class CardWidget extends StatelessWidget {
               new Text("This is Description")
             ],
           ),
-          trailing: new IconButton(icon: new Icon(Icons.arrow_drop_down_circle), onPressed: null),
+          trailing: new IconButton(
+              icon: new Icon(Icons.arrow_drop_down_circle),
+              onPressed: null
+          ),
         )
       ),
     );

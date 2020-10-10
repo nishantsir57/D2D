@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:d2d/constants/AppColors.dart';
 import 'package:d2d/widgets/AppDrawerWidget.dart';
 import 'package:d2d/widgets/ContainerWidget.dart';
+import 'package:d2d/widgets/DropDownAlertDialog.dart';
 import 'package:d2d/widgets/DropDownWidget.dart';
 import 'package:d2d/widgets/FloatingWidget.dart';
 import 'package:d2d/widgets/ListViewWidget.dart';
@@ -42,15 +43,19 @@ class HomePageState extends State<HomePage>
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
-        title: new Center(
-          child: Text("Home"),
-        ),
+        title: Text("Home"),
         backgroundColor: AppColors.appBarColor,
         actions: <Widget>[
           new Column(
             children: <Widget>[
               new  Container(height: 5,),
-              new DropDownWidget().build(context),
+              new RaisedButton(
+                  onPressed: () => showDialog(
+                      context: context,
+                    builder: (BuildContext context) => new DropDownAlertDialog().build(context)
+                  ),
+                  child: Text("D2D Store")
+              )
             ],
           ),
           new ContainerWidget().build(context),

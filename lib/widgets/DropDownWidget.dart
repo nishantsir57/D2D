@@ -24,6 +24,7 @@ class DropDownState extends State<DropDown> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
+      onTap: openAtCenter,
         // value: _value,
         // iconSize: 15,
         items: [
@@ -39,6 +40,29 @@ class DropDownState extends State<DropDown> {
         onChanged: (value) => setState(
             ()=> _value=value
         ),
+    );
+  }
+  Widget openAtCenter()
+  {
+    return new AlertDialog(
+      content: Stack(
+        overflow: Overflow.visible,
+        children: [
+          Positioned(
+              right: -40.0,
+              top: -40.0,
+              child: new Container(
+                child: new DropdownButton(
+                    items: [
+                      DropdownMenuItem(child: Text('D2D Store'), value: 'D2D Store',),
+                      DropdownMenuItem(child: Text('Other Stores'), value: 'Other Stores',)
+                    ],
+                    onChanged: null),
+              )
+          )
+        ],
+      ),
+
     );
   }
 }
